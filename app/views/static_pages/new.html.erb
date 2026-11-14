@@ -4,7 +4,9 @@
     <h1 class="mb-4 text-center">今日の食卓は海外の気分</h1>
       <p class="lead text-center mt-5">食べたいものの雰囲気を伝えて海外の料理を楽しもう！</p>
       <p class="lead text-center mb-5">Wow！な料理で日常にWow！を</p>
-      <a href="#" class="lead text-center"><p>ユーザー登録して海外の料理を楽しみましょう！</p></a>
+      <% unless user_signed_in? %>
+        <%= link_to "ユーザー登録して海外の料理を楽しみましょう！", new_user_registration_path, class: "lead text-center" %><br><br>
+      <% end %>
       <textarea class="form-control" id="mood" rows="3" aria-label="気分の入力" placeholder="例：コストコの塊肉をカロリー爆上げで食べたい"></textarea>
       <div class="form-text">200文字以内</div>
       <div class="row">
