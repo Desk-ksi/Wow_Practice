@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  # deviseの各アクションにルーティングを追加するには、devise_scopeで括る必要がある
+  devise_scope :user do
+    # ルートパスをユーザー登録画面に設定する
+    root to: "devise/registrations#new"
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
