@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # deviseの各アクションにルーティングを追加するには、devise_scopeで括る必要がある
   devise_scope :user do
     # ルートパスをユーザー登録画面に設定する
-    root to: "devise/registrations#new"
+    root to: "static_pages#new"
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
